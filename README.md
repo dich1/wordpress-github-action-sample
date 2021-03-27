@@ -1,4 +1,4 @@
-# wordpress-github-actionn-sample
+# wordpress-github-action-sample
 
 ## 参考
 https://qiita.com/ikeyansaza/items/96fcd40b5a6ea616e913
