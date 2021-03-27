@@ -1,4 +1,8 @@
 # wordpress-github-actionn-sample
+
+## 参考
+https://qiita.com/ikeyansaza/items/96fcd40b5a6ea616e913
+
 ## 使い方
 1. git管理下に.github/workflows/deploy.ymlを配置する。  
 https://github.com/dich1/wordpress-github-actionn-sample/blob/main/.github/workflows/deploy.yml
