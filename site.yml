@@ -1,0 +1,8 @@
+# encoding: utf-8
+# vim: ft=ruby expandtab shiftwidth=2 tabstop=2
+
+chef_cookbook_path: /vccw/provision
+hostname: sumalna.local
+ip: 192.168.33.11
+lang: ja
+linked_clone: true

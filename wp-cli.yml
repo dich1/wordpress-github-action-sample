@@ -1,0 +1,4 @@
+require:
+  - wp-cli/browse-command.php
+@sumalna.local:
+  ssh: vagrant:sumalna.local:/var/www/html
