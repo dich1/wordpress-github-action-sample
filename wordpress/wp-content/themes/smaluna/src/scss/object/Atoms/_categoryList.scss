@@ -1,0 +1,19 @@
+.a-categoryList {
+  @include flex-start;
+  > * {
+    margin-right: 16px;
+  }
+  .date {
+    color: $type_brand;
+    @include fts(12,12);
+    @extend .weight700;
+  }
+  .category {
+    
+    @include fts(11,11);
+    @extend .weight700;
+  }
+  a {
+    color: $type_brand;
+  }
+}

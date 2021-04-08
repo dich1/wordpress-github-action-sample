@@ -1,0 +1,72 @@
+// ベンダープレフィックスを自動で付与する
+//claerfix
+@mixin cf() {
+  *zoom: 1;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+//センター配置
+@mixin center() {
+  margin-right: auto;
+  margin-left: auto;
+}
+//センター配置
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+}
+@mixin flex-start() {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+@mixin fts($fts, $lin: $fts+12) {
+  $rem: $fts / 10;
+  $linS: $lin / $fts;
+  font-size: #{$fts}px;
+  font-size: #{$rem}rem;
+  line-height: $linS;
+}
+// Responsive Mixins
+@mixin respond($media) {
+  @if $media == sp {
+    @media print, screen and (max-width: $lg-device-width - 1) { @content; }
+  }
+  @else if $media == md {
+    @media print, screen and (min-width: $sm-device-width) and (max-width: $lg-device-width - 1) { @content; }
+  }
+
+  @else if $media == pc {
+    @media print, screen and (min-width: $lg-device-width) { @content; }
+  }
+  @else {
+    @media print, screen and ('#{$media}') { @content; }
+  }
+}
+@mixin transition-opacity() {
+  transition: .4s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+// width(Sp)
+@mixin width($w) {
+  width:($w / 750) * 100%;
+}
+// width(Pc)
+@mixin pcWidth($w) {
+  width:($w / 1600) * 100%;
+}

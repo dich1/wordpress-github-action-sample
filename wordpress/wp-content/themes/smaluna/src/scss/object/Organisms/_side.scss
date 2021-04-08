@@ -1,0 +1,39 @@
+.o-side {
+  @include respond(sp) {
+    padding: 0 25px;
+  }
+  &__item {
+    margin-bottom: 72px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include respond(sp) {
+      margin-bottom: 56px;
+    }
+    > * {
+      margin-bottom: 16px;
+    }
+  }
+  .a-title {
+    margin-bottom: 16px;
+    @include respond(sp) {
+      text-align: center;
+    }
+  }
+  .a-title__subTitle {
+    padding-bottom: 0;
+    margin-bottom: 40px;
+    @include respond(sp) {
+      text-align: center;
+    }
+    &:before {
+      display: none;
+    }
+  }
+  .m-card_article {
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

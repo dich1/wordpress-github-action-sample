@@ -1,0 +1,243 @@
+.m-card_article {
+  text-align: left;
+  position: relative;
+  &__img {
+    width: 100%;
+    height:0;
+    border: 2px solid $black;
+    margin-bottom: 24px;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    @include respond(pc) {
+      width: 260px;
+      height: 260px;
+    }
+    @include respond(sp) {
+      padding-top: 100%;
+    }
+  }
+  &__detail {
+    * {
+      color: $type_brand;
+      @include fts(12,12);
+      @extend .weight700;
+    }
+    @include flex-start;
+    margin-bottom: 14px;
+    .category {
+      margin-left: 16px;
+      @include fts(11,11);
+    }
+  }
+  &__title {
+    margin-bottom: 24px;
+    @include fts(16,32);
+    @include respond(pc) {
+      height: auto;
+      max-height: 5.6rem;
+    }
+    overflow: hidden;
+    @extend .weight500;
+    @include respond(sp) {
+      height: 2.6rem;
+    }
+  }
+  .a-categoryList {
+    margin-bottom: 16px;
+  }
+  .a-icon {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 1;
+  }
+  &.is-hidden{
+    display: none;
+  }
+  &.is-active {
+    animation: show 0.3s linear 0s;
+  }
+  a {
+    &.overAll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-indent:-999px;
+      z-index: 2; /* リンク要素の重なりのベース順序指定 */
+    }
+    &.textLink {
+      position: relative;
+      z-index: 3;
+    }
+  }
+}
+//slide
+.m-card_articleLarge {
+  position: relative;
+  @include respond(pc) {
+    @include flex-between;
+    align-items: center;
+    transition: all 0.8s ease-out;
+    transform: scale(1,1);
+    flex-direction: row-reverse;
+  }
+  .m-card_article__inner {
+    @include respond(pc) {
+      padding: 32px 40px 0 0;
+    }
+  }
+  .a-categoryList {
+    @include respond(pc) {
+      margin-bottom: 36px;
+    }
+    @include respond(sp) {
+      margin-bottom: 16px;
+    }
+  }
+  .m-card_article__title {
+    @include respond(pc) {
+      margin-bottom: 36px;
+      @include fts(34,68);
+      height: auto;
+
+    }
+    @include respond(sp) {
+      @include fts(20,40);
+      height: auto;
+      margin-bottom: 8px;
+    }
+  }
+  .m-card_article__img {
+    width: 100%;
+    height: 0;
+    border: 2px solid $black;
+    margin-bottom: 24px;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    @include respond(pc) {
+      width: 464px;
+      height: 464px;
+      min-width: 464px;
+    }
+    @include respond(sp) {
+      padding-top: 100%;
+    }
+  }
+  .detailArea {
+    @include respond(pc) {
+      width: 360px;
+      padding: 0 0 0 100px;
+    }
+  }
+  .m-card_article__text {
+    color: $type_caption;
+    margin-bottom: 16px;
+    @include respond(sp) {
+      @include fts(14,28);
+      display: none;
+    }
+  }
+  .a-tagList {
+    @include respond(pc) {
+      margin-bottom: 72px;
+    }
+  }
+  a {
+    &.overAll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-indent:-999px;
+      z-index: 2; /* リンク要素の重なりのベース順序指定 */
+    }
+    &.textLink {
+      position: relative;
+      z-index: 3;
+      @include respond(sp) {
+        display: none;
+      }
+    }
+  }
+}
+
+.m-card_articleHorizontal {
+  @extend .m-card_article;
+  @include flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  .m-card_article__img {
+    margin-bottom: 0;
+    margin-right: 24px;
+    @include respond(pc) {
+      width: 130px;
+      min-width: 130px;
+      height: 130px;
+    }
+    @include respond(sp) {
+      width: 100px;
+      min-width: 100px;
+      padding-top: 100px;
+    }
+  }
+  .a-categoryList {
+    margin-bottom: 8px;
+  }
+}
+.m-card_share {
+  border: 2px solid $stroke;
+  background: #fff;
+  @include respond(pc) {
+    @include flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__img {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    @include respond(pc) {
+      width: 180px;
+      min-width: 180px;
+      height: 180px;
+    }
+    @include respond(sp) {
+      padding-top: 50%;
+    }
+  }
+  &__detail {
+    padding: 32px;
+    width: 100%;
+    height: 100%;
+    @include respond(sp) {
+      padding: 16px;
+    }
+    .detailTitle {
+      @include fts(16,32);
+      margin-bottom: 4px;
+    }
+    .detailText {
+      color: $type_caption;
+      margin-bottom: 16px;
+    }
+    .shareList {
+      flex-wrap: wrap;
+      @include flex-between;
+      flex-wrap: nowrap;
+      > * {
+        width: 32%;
+      }
+    }
+  }
+}

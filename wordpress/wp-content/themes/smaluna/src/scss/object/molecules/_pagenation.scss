@@ -1,0 +1,49 @@
+.m-pagenation {
+  @include flex-center;
+  align-items: flex-start;
+  > li {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    margin-left: 8px;
+    &.is-active {
+      a {
+        background: $brand;
+        color: #fff;
+        pointer-events: none;
+      }
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      color: $type_body;
+      background: $background;
+      @extend .weight500;
+      @include fts(13,32);
+      border-radius: 50%;
+      transition: all 0.2s ease-out;
+      &:hover {
+        background: $type_brand;
+        color: #fff;
+      }
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      &:hover {
+        svg circle {
+          -svg-fill:$type_brand;
+        }
+      }
+    }
+    .a-icon {
+      &.-secondary {
+        transform: scale(-1, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.t-contents {
+  padding: 180px 0 0;
+  width: 100%;
+  z-index: 0;
+  @include respond(sp) {
+    padding: 90px 0 0;
+  }
+  .m-categoryNavi {
+    @include respond(pc) {
+      position: fixed;
+      right: 32px;
+      top: 300px;
+      z-index: 100;
+    }
+  }
+  .m-snsNavi {
+    @include respond(pc) {
+      position: fixed;
+      left: 32px;
+      top: 300px;
+      z-index: 100;
+    }
+  }
+  aside {
+    @include respond(pc) {
+      width: 360px;
+      min-width: 360px;
+      margin-left: 100px;
+    }
+  }
+}

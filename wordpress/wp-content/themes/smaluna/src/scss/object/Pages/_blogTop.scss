@@ -1,0 +1,179 @@
+$contentsPadding: 180px;
+.page_blog {
+  &.-index {
+    .page_blog__item.-archive {
+      background: none;
+      padding-top: 0;
+    }
+  }
+  &__item {
+    position: relative;
+    margin-bottom: 80px;
+    @include respond(pc) {
+      margin-bottom: 120px;
+    }
+    &:last-of-type {
+      @include respond(pc) {
+        padding-bottom: 120px;
+        margin-bottom: 0;
+      }
+    }
+    &.-flex {
+      @include respond(pc) {
+        @include flex-between;
+        width: $base_wrap;
+        @include center;
+      }
+    }
+    .inner {
+      @include respond(pc) {
+        @include center;
+        width: $base_wrap;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      z-index: -1;
+    }
+    &.-swiper {
+      @include respond(pc) {
+        height: 796px - $contentsPadding;
+      }
+      &:before {
+        background: $accent;
+        right: 0;
+        @include respond(pc) {
+          width : calc(100% - 980px);
+          top: -$contentsPadding;
+          height: 616px + $contentsPadding;
+        }
+        width: 40%;
+        height: 40%;
+      }
+    }
+    &.-popular {
+      @include respond(pc) {
+        padding: 80px 0;
+        margin-bottom: 160px;
+      }
+      @include respond(sp) {
+        padding-top: 80px;
+      }
+      .a-title__subTitle {
+        @include respond(sp) {
+          margin-bottom: 32px;
+        }
+      }
+      .inner {
+        @include respond(pc) {
+          @include flex-start;
+          align-items: flex-start;
+          width: $base_wrap + 40;
+          position: relative;
+          left: 20px;
+        }
+      }
+      .innerTitle {
+        @include respond(pc) {
+          padding: 40px 86px 0 0;
+          position: relative;
+        }
+        @include respond(sp) {
+          padding-left: 25px;
+        }
+        .textCaption {
+          @include respond(pc) {
+            padding-top: 40px;
+          }
+          @include respond(sp) {
+            margin-bottom: 40px;
+          }
+          color: $type_caption;
+        }
+        .innerImg {
+          position: absolute;
+          @include respond(sp) {
+            top: 85px;
+            right: 20px;
+            width: 54%;
+          }
+          @include respond(pc) {
+            width: 100%;
+            position: absolute;
+            bottom: -200px;
+            left: -60px;
+          }
+        }
+      }
+      .o-archive {
+        @include respond(pc) {
+          width: 860px + 40;
+        }
+        @include respond(sp) {
+          overflow: hidden;
+        }
+        &__inner {
+          @include respond(pc) {
+            width: 100%;
+            left: 0;
+            margin: 0;
+          }
+          @include respond(sp) {
+            padding: 10px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            display: flex;
+          }
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+        .m-card_article {
+          @include respond(sp) {
+            width: 260px;
+            min-width: 260px;
+            margin: 0 0 0 25px;
+            
+          }
+        }
+        .a-btn {
+          width : calc(100% - 40px);
+          @include respond(pc) {
+            margin-right: 0;
+            margin-left: 0;
+          }
+          @include respond(sp) {
+            display: none;
+          }
+        }
+      }
+      &:before {
+        background: $type_accentPink;
+        @include respond(pc) {
+          height: 100%;
+          width : calc(100% - 980px);
+        }
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 400px;
+      }
+    }
+    &.-archive {
+      padding: 120px 0;
+      margin-bottom: 0;
+      background: #fff;
+    }
+    .o-post {
+      @include respond(sp) {
+        margin-bottom: 40px;
+      }
+
+    }
+  }
+}
+

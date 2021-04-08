@@ -1,0 +1,13 @@
+.a-tagList {
+  @include flex-start;
+  flex-wrap: wrap;
+  > li {
+    color: $type_caption;
+    background: $stroke;
+    //display: inline-block;
+    @include fts(12,12);
+    padding: 4px 8px;
+    border-radius: 2px;
+    margin: 0 8px 8px 0;
+  }
+}

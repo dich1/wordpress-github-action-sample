@@ -1,0 +1,133 @@
+.a-btn {
+  width: auto;
+  display: block;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  @include flex-center;
+  align-items: center;
+  padding: 20px 16px;
+  @extend .weight600;
+  @include fts(14,14);
+  overflow: hidden;
+  color: $type_body;
+  position: relative;
+  overflow: hidden;
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255,255,255,0.2);
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform .4s;
+    z-index: 0;
+  }
+  &:hover {
+    &:after {
+      @include respond(pc){
+        transform-origin: left top;
+        transform: scale(1, 1);
+      }
+    }
+  }
+  .a-icon {
+    width: 20px;
+    height: 18px;
+    margin-right: 16px;
+    position: relative;
+    @include respond(sp) {
+      margin-right: 8px;
+    }
+  }
+  span {
+    display: block;
+    @include fts(10,10);
+    margin-bottom: 4px;
+  }
+  &.-primary {
+    color: #fff;
+    background: $brand;
+    padding: 20px 12px;
+    @include respond(sp) {
+      @include fts(12,12);
+    }
+  }
+  &.-secondary {
+    @extend .a-btn.-primary;
+    background: $gray;
+  }
+  &.-tel {
+    @extend .a-btn.-primary;
+    color: $black;
+    background: #fff;
+  }
+  &.-goast {
+    padding: 16px;
+    border: 2px solid $stroke;
+    @extend .weight500;
+    color: $type_brand;
+    text-align: center;
+    display: block;
+    z-index: 1;
+    &:hover {
+      color: #fff;
+    }
+    &:after {
+      background: $brand;
+      z-index: -1;
+    }
+  }
+  &.-text {@include flex-start;
+    text-align: left;
+    color: $type_brand;
+    @extend .weight700;
+    @include fts(12,12);
+    padding: 0;
+    .a-icon {
+      width: 10px;
+      height: 10px;
+      margin-right: 12px;
+    }
+  }
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.a-btnSns {
+  @extend .a-btn;
+  @include fts(12,12);
+  color: #fff;
+  padding: 12px;
+  @include respond(sp) {
+    @include fts(11,11);
+    flex-direction: column;
+    align-items: center;
+    @include flex-center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 14px 8px;
+  }
+  svg {
+    @include fts(18,18);
+    @include respond(pc) {
+      margin-right: 8px;
+      width: 100%;
+    }
+    @include respond(sp) {
+      margin-bottom: 8px;
+    }
+  }
+  &.-fb {
+    background: $color-sns_fb;
+  }
+  &.-tw {
+    background: $color-sns_tw;
+  }
+  &.-line {
+    background: $color-sns_line;
+  }
+}

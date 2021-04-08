@@ -1,0 +1,73 @@
+.o-header {
+  
+  z-index: 1;
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  @include respond(pc) {
+
+    padding: 40px 40px 0;
+    @include flex-between;
+    align-items: flex-start;
+    @include fts(20);
+  }
+  @include respond(sp) {
+    padding: 32px 24px 0 24px;
+  }
+  .a-logo {
+    img {
+      vertical-align: top;
+      width: 240px;
+      @include respond(sp) {
+        width: 184px;
+        height: 45px;
+      }
+    }
+    &.-secondary {
+      @include flex-start;
+      align-items: flex-start;
+      @include respond(sp) {
+        flex-wrap: nowrap;
+      }
+      .a-tag {
+        background: $black;
+        @include fts(12,12);
+        padding: 3px 4px;
+        @extend .weight500;
+        color: #fff;
+        margin-left: 16px;
+        @include respond(sp) {
+          margin-left: 8px;
+          @include fts(10,10);
+        }
+      }
+    }
+  }
+  .m-navigation {
+    @include respond(sp) {
+      display: none;
+    }
+    .a-btn {
+      width: 160px;
+      height: 68px;
+      &.-tel {
+        background: none;
+        width: auto;
+        padding: 0 42px 0 0;
+        @include fts(16,16);
+        .a-icon {
+          width: 10px;
+          margin-right: 8px;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+

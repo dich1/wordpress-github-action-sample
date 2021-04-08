@@ -1,0 +1,17 @@
+.m-navigation {
+  @include flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  .a-btn {
+    width: auto;
+    height: 68px;
+    &.-tel {
+      @include fts(16,16);
+      .a-icon {
+        width: 10px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+

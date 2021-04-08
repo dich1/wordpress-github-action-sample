@@ -1,0 +1,31 @@
+@import "../../foundation/mixin";
+@import "../../foundation/variables";
+.o-breadcrumb {
+  width: 100%;
+  @include flex-start;
+  @include fts(12,24);
+  li {
+    position: relative;
+    margin-right: 16px;
+    color: #808080;
+    &:before {
+      font-family: 'Font Awesome 5 Free';
+      content: '\f054';
+      font-weight: 900;
+      padding-left: 4px;
+      @include fts(8,8);
+      position: relative;
+      top: -2px;
+      left: -10px;
+      color: #808080;
+    }
+    a {
+      color: #00928a;
+    }
+    &:first-child {
+      &:before {
+        content: "";
+      }
+    }
+  }
+}

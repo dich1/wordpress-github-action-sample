@@ -1,0 +1,60 @@
+.m-categoryNavi {
+  @include respond(sp) {
+    padding: 16px 25px 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  @include respond(pc) {
+    //background: rgba(255,255,255,0.6);
+    padding: 24px 16px 0;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__item {
+    position: relative;
+    @include respond(pc) {
+      text-align: right;
+      margin-bottom: 28px;
+    }
+    @include respond(sp) {
+      margin-right: 8px;
+      display: inline-block;
+    }
+    a {
+      color: $type_body;
+      @extend .weight700;
+      display: block;
+      @include fts(12,12);
+      &:hover {
+        color: $type_brand;
+      }
+      @include respond(pc) {
+        @include fts(14,14);
+      }
+      span {
+        display: inline-block;
+        @include respond(sp) {
+          padding: 8px;
+          display: block;
+        }
+      }
+    }
+    a span {
+      position: relative;
+    }
+    &.is-active {
+      a span {
+        pointer-events: none;
+        color: #fff;
+        background: $black;
+        @include respond(pc) {
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+}

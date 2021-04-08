@@ -1,0 +1,33 @@
+.m-snsNavi {
+  @include respond(pc) {
+    //background: rgba(255,255,255,0.6);
+    padding: 24px 16px 0;
+  }
+  @include respond(sp) {
+    @include flex-center;
+  }
+  &__item {
+    text-align: left;
+    margin-bottom: 32px;
+    position: relative;
+    @include respond(sp) {
+      margin-bottom: 0;
+    }
+    > * {
+      @include respond(sp) {
+        padding: 0 16px;
+      }
+    }
+    .a-icon {
+      width: 20px;
+      height: 20px;
+    }
+    a {
+      display: block;
+    }
+    a span {
+      position: relative;
+      display: none;
+    }
+  }
+}

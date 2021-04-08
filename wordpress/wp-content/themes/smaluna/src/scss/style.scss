@@ -1,0 +1,142 @@
+@import "foundation/reset";
+@import "foundation/variables";
+@import "foundation/mixin";
+@import "object/**/*";
+
+body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: $type_body;
+  font-family: 'Montserrat','Noto Sans JP',sans-serif;
+  font-weight: 400;
+  background: $background;
+  * {
+    font-feature-settings: "palt";
+  }
+  .-center {
+    text-align: center;
+  }
+  .weight500   {
+    font-weight: 500;
+  }
+  .weight600   {
+    font-weight: 600;
+  }
+  .weight700   {
+    font-weight: 700;
+  }
+  .is-hidden {
+    display: none;
+  }
+  .is-pc {
+    @include respond(pc) {
+      display: block;
+    }
+    @include respond(sp) {
+      display: none;
+    }
+  }
+  .is-sp {
+    @include respond(pc) {
+      display: none;
+    }
+    @include respond(sp) {
+      display: block;
+    }
+  }
+  .js-navigation {
+    position: fixed;
+    left: 2%;
+    bottom: 20px;
+    width: 96%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    
+    li {
+      width: 65%;
+      &:first-child {
+        width: 100%;
+      }
+    }
+  }
+  a {
+    @include respond(pc) {
+      transition: all 0.4s ease-out;
+    }
+  }
+
+}
+
+//swiper
+.swiper-container {
+  @include respond(pc) {
+    padding: 0 0 70px 0!important;
+  }
+  @include respond(sp) {
+    padding: 25px 25px 40px!important
+  }
+  &:before,&:after {
+    @include respond(pc) {
+      position: absolute;
+      content: "";
+      top: 0;
+      width: 180px;
+      height: 100%;
+      background: rgba(255,255,255,0.6);
+      z-index: 2;
+    }
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+  .swiper-pagination-bullet {
+    border-radius: 0;
+    width: 60px;
+    height: 2px;
+    &-active {
+      background: $brand;
+    }
+  }
+  .js-iconPickUp {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    width: 256px;
+    z-index: 1;
+    margin-left: -100px;
+    opacity: 1;
+    transition: all 1s;
+    transform: translate(0,0) scale(1,1);
+    @include respond(sp) {
+      top: 50%;
+      left: 100px;
+      display: none;
+    }
+    &.is-hide {
+      opacity: 0;
+      transform: translate(-60px, 0) scale(0.8, 0.8);
+    }
+  }
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    .m-card_articleLarge {
+      @include respond(pc) {
+        transform: scale(0.8,0.8);
+      }
+    }
+  }
+  .swiper-slide-active {
+    .m-card_articleLarge {
+      @include respond(pc) {
+        transform: scale(1,1);
+      }
+    }
+  }
+}
+
+
+
+  

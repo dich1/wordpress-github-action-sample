@@ -1,0 +1,27 @@
+.a-title {
+  @include fts(32,32);
+  margin-bottom: 24px;
+  &__subTitle {
+    @include fts(14,14);
+    color: #414A4F;
+    @extend .weight700;
+    position: relative;
+    padding-bottom: 32px;
+    &.-center {
+      &:before {
+        left: 50%;
+        margin-left: -20px;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      left: 50%;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background: $black;
+    }
+  }
+}

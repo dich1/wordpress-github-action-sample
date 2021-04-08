@@ -1,0 +1,222 @@
+.o-post {
+  @include respond(sp) {
+    padding: 0 25px;
+  }
+  .fullImg {
+    @include respond(sp) {
+      width:100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      img {
+        max-width:100vw;
+        width:100vw;
+      }
+    }
+  }
+}
+.o-post__upper {
+  border-bottom: 2px solid $black;
+  @include respond(pc) {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+  @include respond(sp) {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+  }
+  .upperThumbnail {
+    margin-bottom: 40px;
+    @include respond(sp) {
+      margin-bottom: 24px;
+    }
+  }
+  .upperTitle {
+    @include fts(34,68);
+    @extend .weight500;
+    margin-bottom: 24px;
+    @include respond(sp) {
+      @include fts(20,40);
+    }
+  }
+  .a-categoryList {
+    margin-bottom: 24px;
+    .date {
+      @include fts(14,14);
+    }
+    .category {
+      @include fts(13,13);
+    }
+  }
+  .upperDetail {
+    @include flex-between;
+  }
+  .snsShare {
+    @include flex-start;
+    align-items: center;
+    @include respond(sp) {
+      display: none;
+    }
+    &__title {
+      @extend .weight700;
+      color: $type_caption;
+      @include fts(12,12);
+    }
+    li {
+      margin-left: 20px;
+    }
+    .a-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.o-post__inner {
+  @include fts(16,32);
+  > * {
+    margin-bottom: 40px;
+  }
+  .tableContents {
+    padding: 32px;
+    background: $accent;
+    @include respond(sp) {
+      padding: 24px 20px;
+    }
+    &__title {
+      @extend .weight700;
+      @include fts(14,28);
+      margin-bottom: 8px;
+    }
+    li {
+      position: relative;
+      margin-bottom: 8px;
+      @include fts(13,26);
+      &:before {
+        position: absolute;
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $black;
+        top: 9px;
+        left: 0;
+      }
+      a {
+        padding-left: 20px;
+        display: block;
+        color: #37A0DA;
+      }
+    }
+  }
+  h2 {
+    @include fts(28,56);
+    @extend .weight500;
+    border-bottom: 2px solid $black;
+    padding-bottom: 8px;
+    @include respond(sp) {
+      @include fts(22,44);
+    }
+  }
+  h3 {
+    position: relative;
+    padding-left: 16px;
+    @extend .weight500;
+    @include fts(24,48);
+    @include respond(sp) {
+      @include fts(18,36);
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 32px;
+      background: $brand;
+      top: 6px;
+      left: 0;
+      @include respond(sp) {
+        top: 0;
+      }
+    }
+  }
+  h4 {
+    @include fts(20,40);
+    @extend .weight500;
+    @include respond(sp) {
+      @include fts(16,32);
+    }
+  }
+  /*以下相談*/
+  dl {
+    @include fts(14,28);
+    dt {
+      @extend .weight700;
+    }
+    dl {
+      padding-left: 16px;
+      dt {
+        @extend .weight500;
+      }
+    }
+  }
+}
+.o-post__lower {
+  > * {
+    margin-bottom: 40px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .a-tagList {
+    padding-top: 16px;
+    border-top: 2px solid $black;
+  }
+  .ctaArea {
+    position: relative;
+    bacckground: #fff;
+    padding: 58px 32px 48px;
+    border: 2px solid $stroke;
+    @include flex-center;
+    flex-wrap: wrap;
+    @include respond(sp) {
+      padding: 32px 16px;
+    }
+    &:before {
+      @include respond(pc) {
+        position: absolute;
+        content: "";
+        top: 40px;
+        right: -50px;
+        width: 137.55px;
+        height: 85.65px;
+        background: url('/img/common/ctaDecoration.svg') left top no-repeat;
+      }
+    }
+    &__title {
+      width: 361px;
+      margin-bottom: 24px;
+      @include respond(sp) {
+        width: 72%;
+        margin-bottom: 32px;
+      }
+    }
+    &__list {
+      width: 100%;
+      @include respond(pc) {
+        @include flex-center;
+      }
+      li {
+        width: 100%;
+        &:last-child {
+          @include respond(sp) {
+            margin-bottom: 0;
+          }
+        }
+        @include respond(sp) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
