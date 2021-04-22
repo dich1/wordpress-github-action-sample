@@ -15,6 +15,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           server: ${{ secrets.FTP_SERVER }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: wordpress/wp-content/themes/smaluna
-          remote_path: /xs149103.xsrv.jp/public_html/wp-content/themes/smaluna
-          args: '-o ConnectTimeout=5 -p 10021'
+          local_path: 'wordpress/wp-content/themes/smaluna'
+          remote_path: '/xs149103.xsrv.jp/public_html/wp-content/themes/smaluna'
+          args: '-p 10021'
