@@ -2,18 +2,19 @@ on:
   push:
     branches:
       - main
-name: Deploy
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  deploy_job:
     runs-on: ubuntu-latest
+    name: deploy
     steps:
-      - uses: actions/checkout@master
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@2.0.0
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          LOCAL_DIR: wordpress/wp-content/themes/smaluna
-          REMOTE_DIR: /xs149103.xsrv.jp/public_html/wp-content/themes/smaluna
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          local_path: wordpress/wp-content/themes/smaluna
+          remote_path: /xs149103.xsrv.jp/public_html/wp-content/themes/smaluna
+          args: '-o ConnectTimeout=5 -p 10021'
