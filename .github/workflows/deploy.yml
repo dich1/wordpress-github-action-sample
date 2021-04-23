@@ -17,4 +17,4 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
           local_path: 'wordpress/wp-content/themes/smaluna'
           remote_path: '/xs156192.xsrv.jp/public_html/wp-content/themes/smaluna'
-          args: '-P 10022 -o ConnectTimeout=10'
+          args: '-o Port=10022 ConnectTimeout=10'
